@@ -1,12 +1,8 @@
 /*******************************************************************
+    Using a 32 * 16 RGB Matrix to display an eldritch wandering eye
  *                                                                 *
-    An ESP32 port of Conway's Game of Life sketch for Arduino by Aerodynamics
-    Project here: https://www.hackster.io/aerodynamics/arduino-led-matrix-game-of-life-093f06
-    
     Based on the great work of Brian Lough and Leonid Rusnac (@lrusnac github)
     https://www.youtube.com/channel/UCezJOfu7OtqGzd5xrP3q6WA
-    
-   
 
     Edited by Emily Velasco (twitter.com/MLE_Online)
  *******************************************************************/
@@ -36,7 +32,7 @@ Ticker display_ticker;
 bool WORLD[16][32]; // Creation of the world
 bool WORLD2[16][32]; // Creation of the world
 int step_GOL; //used to know the generation
-uint16_t world_frame[16][32];
+//uint16_t world_frame[16][32];
 
  PxMATRIX display(32,16,P_LAT, P_OE,P_A,P_B,P_C);
 // PxMATRIX display(64,32,P_LAT, P_OE,P_A,P_B,P_C,P_D);
@@ -52,6 +48,7 @@ void initializeWorld(){
   display.clearDisplay();
   delay(500);
   randomSeed(analogRead(5));
+ 
   for (byte i = 0; i < 16; i++) {
     for (byte j = 0; j < 32; j++) {
       WORLD[i][j] = random(0, 2);
@@ -73,7 +70,7 @@ void drawFrame() {
   for (int yy = 0; yy < imageHeight; yy++) {
     for (int xx = 0; xx < imageWidth; xx++) {
       if(WORLD[yy][xx] == 1) {
-        display.drawPixel(xx, yy, 0x07E0);
+        display.drawPixel(xx, yy, display.color565(random(0,255), random(0,255), random(0,255)));
       } else {
         display.drawPixel(xx, yy, 0x0000);
       }
