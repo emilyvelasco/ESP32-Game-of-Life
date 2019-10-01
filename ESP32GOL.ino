@@ -1,9 +1,11 @@
 /*******************************************************************
-    Using a 32 * 16 RGB Matrix to display an eldritch wandering eye
- *                                                                 *
+    An ESP32 port of Conway's Game of Life sketch for Arduino by Aerodynamics
+    Original Project here: https://www.hackster.io/aerodynamics/arduino-led-matrix-game-of-life-093f06
+    
     Based on the great work of Brian Lough and Leonid Rusnac (@lrusnac github)
     https://www.youtube.com/channel/UCezJOfu7OtqGzd5xrP3q6WA
-
+    
+   
     Edited by Emily Velasco (twitter.com/MLE_Online)
  *******************************************************************/
 
