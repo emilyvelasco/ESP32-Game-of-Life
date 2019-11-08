@@ -38,7 +38,7 @@ bool WORLD2[48][32]; // Creation of the world
 int step_GOL; //used to know the generation
 //uint16_t world_frame[16][32];
 
- PxMATRIX display(32,46,P_LAT, P_OE,P_A,P_B,P_C);
+ PxMATRIX display(32,48,P_LAT, P_OE,P_A,P_B,P_C);
 // PxMATRIX display(64,32,P_LAT, P_OE,P_A,P_B,P_C,P_D);
 //PxMATRIX display(64, 32, P_LAT, P_OE, P_A, P_B, P_C, P_D, P_E);
 
